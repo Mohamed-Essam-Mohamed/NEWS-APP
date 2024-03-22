@@ -18,7 +18,8 @@
 - **Splash Screen:** Adding a splash screen to your Android app. 
 - **Home Screen:** You start with categories and then you can navigate to the news based on choosing the desired category on the same scaffold.
 - **Drawer Screen:** It is possible to move to the category when we are in the news and vice versa is true.
-- **Details Screen:** View the news Image, The News title and the News description, and you can navigate to the official news website to find out more.
+- **Details Screen:** When the user clicks on an article, will go to this screen to show the details of this article and when the user clicks on view article, it will view its link in the user’s default browser.
+- **Search Screen:** It same as the previous screen but in appear there is a search bar where the user can write the name of the article to search on it in API, and  shown when the user clicks on the search icon in the previous screen.
 
 
 
