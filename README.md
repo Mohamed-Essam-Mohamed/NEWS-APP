@@ -5,13 +5,13 @@
 
 ## 🚀 Getting Started
 
-- In the previous section, we know everything about API and how apps can get data from servers.
-- Let’s make an app that uses APIs to show data for users and know how to connect with an API and get data or send data to an API in Flutter.
--  The app that we will try is News App.
--  News App is an app where users can know anything happened around the world and different news about the environment, politics, sports, health, etc. Users can get news from different sources like BBC etc.
+- The application is fully API-dependent.
+- pagination shows the pages.
+- used searchDelegate to search.
 -  As we know, to get news from the internet we should connect to an API so let’s see the News API that we will use in this app.
 -  News API is a simple JSON-based REST API for searching and retrieving news articles and articles from specific sources from all over the internet. Using this, one can fetch the most important news articles that work on a news site or search for the most important news on a specific topic (or keyword).
 -   News can be retrieved based on some criteria. Say the topic (keyword) to be searched is 'route' or may be related to a particular channel
+-   used package   webview_flutter: ^4.7.0 To get the source of the news and display it in the application.
   
 ## 🤳 Screens
 
