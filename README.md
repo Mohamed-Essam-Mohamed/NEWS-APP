@@ -35,7 +35,7 @@
 
 
 ## 🎥 Video
-
+https://github.com/Mohamed-Essam-Mohamed/news_app/assets/152906492/41055297-8442-4ee2-9ba4-fd184fee4a1a
 
 
 ## 🛠 Dependencies
