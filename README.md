@@ -28,9 +28,7 @@ using different end point and he can view the website of the article, the app al
 
 
 ## 📁 Files Structure
-![Screenshot 2024-03-22 014103](https://github.com/Mohamed-Essam-Mohamed/news_app/assets/152906492/454b1f16-2d33-42a1-a609-7899739d1465)
-
-
+![files structure](https://github.com/Mohamed-Essam-Mohamed/news_app/assets/152906492/f1d7d5d4-96ea-4270-93b6-2da25ffa7340)
 
 ## 📱 UI
 
@@ -43,10 +41,14 @@ https://github.com/Mohamed-Essam-Mohamed/news_app/assets/152906492/41055297-8442
 ## 🛠 Dependencies
 
 ```pubspec.yaml
-  http: ^1.2.1
-  shimmer: ^3.0.0
-  cached_network_image: ^3.3.1
-  webview_flutter: ^4.7.0
+  flutter_localizations:
+        sdk: flutter 
+  loading_animation_widget: ^1.2.0+4
+  lottie: ^2.7.0
+  http: ^1.1.0
+  flutter_screenutil: ^5.9.0
+  dio: ^5.3.3
+  audioplayers: ^5.2.1
 ```
 
 
