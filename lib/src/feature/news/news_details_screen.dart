@@ -1,13 +1,12 @@
-import 'dart:async';
-
-import 'package:app_news/src/animation/loading_animation_image.dart';
-import 'package:app_news/src/feature/news/view_full_article.dart';
-import 'package:app_news/src/model/news_respons_model.dart';
+import '../../animation/loading_animation_image.dart';
+import 'view_full_article.dart';
+import '../../model/news_respons_model.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
+// ignore: must_be_immutable
 class NewsDetailsScreen extends StatelessWidget {
   Articles articles;
 
@@ -22,7 +21,7 @@ class NewsDetailsScreen extends StatelessWidget {
           backgroundColor: Theme.of(context).primaryColor,
           title: Text(
             articles.source!.name ?? '',
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 30,
               fontWeight: FontWeight.w500,
             ),
@@ -38,7 +37,8 @@ class NewsDetailsScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(8),
                   child: CachedNetworkImage(
                     imageUrl: articles.urlToImage ?? "",
-                    placeholder: (context, url) => LoadingAnimationImage(),
+                    placeholder: (context, url) =>
+                        const LoadingAnimationImage(),
                     errorWidget: (context, url, error) =>
                         Image.asset('assets/imags/NewsTest.png'),
                   ),

@@ -1,15 +1,15 @@
-import 'package:app_news/src/animation/loading_animation_image.dart';
-import 'package:app_news/src/animation/loading_animation_page.dart';
-import 'package:app_news/src/api/api_project.dart';
-import 'package:app_news/src/feature/news/widget/news_item.dart';
-import 'package:app_news/src/model/news_respons_model.dart';
-import 'package:app_news/src/model/sources_respons_model.dart';
-import 'package:app_news/src/theme/my_theme.dart';
 import 'package:flutter/material.dart';
 
+import '../../api/api_project.dart';
+import '../../model/news_respons_model.dart';
+import '../../model/sources_respons_model.dart';
+import '../../theme/my_theme.dart';
+import 'widget/news_item.dart';
+
+// ignore: must_be_immutable
 class InitNews extends StatefulWidget {
-  Source source;
-  InitNews({required this.source, super.key});
+  final Source source;
+  const InitNews({required this.source, super.key});
 
   @override
   State<InitNews> createState() => _InitNewsState();
@@ -21,20 +21,21 @@ class _InitNewsState extends State<InitNews> {
   late ScrollController controller;
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     controller = ScrollController();
-    controller.addListener(() {
-      //? i can know if start or end of the page
-      if (controller.position.atEdge) {
-        //? if end of the page
-        if (controller.offset != 0) {
-          setState(() {
-            page++;
-          });
+    controller.addListener(
+      () {
+        //? i can know if start or end of the page
+        if (controller.position.atEdge) {
+          //? if end of the page
+          if (controller.offset != 0) {
+            setState(() {
+              page++;
+            });
+          }
         }
-      }
-    });
+      },
+    );
   }
 
   @override
@@ -47,10 +48,10 @@ class _InitNewsState extends State<InitNews> {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<NewsResponse>(
-      future: ApiProject.getNews(widget.source.id ?? '', page: page),
+      future: ApiProject.getNews(widget.source.id!, page: page),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return Center(
+          return const Center(
             child: CircularProgressIndicator(
               color: MyTheme.defulteColor,
             ),
@@ -75,8 +76,9 @@ class _InitNewsState extends State<InitNews> {
             ),
           );
         }
-
+        articlesList = [];
         articlesList.addAll(snapshot.data!.articles ?? []);
+        page = 1;
         return RefreshIndicator(
           color: Theme.of(context).primaryColor,
           onRefresh: () async {

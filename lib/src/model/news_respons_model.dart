@@ -1,4 +1,4 @@
-import 'package:app_news/src/model/sources_respons_model.dart';
+import 'sources_respons_model.dart';
 
 class NewsResponse {
   String? status;

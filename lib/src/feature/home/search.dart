@@ -1,7 +1,7 @@
-import 'package:app_news/src/api/api_project.dart';
-import 'package:app_news/src/feature/news/widget/news_item.dart';
-import 'package:app_news/src/model/news_respons_model.dart';
-import 'package:app_news/src/theme/my_theme.dart';
+import '../../api/api_project.dart';
+import '../news/widget/news_item.dart';
+import '../../model/news_respons_model.dart';
+import '../../theme/my_theme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -14,16 +14,14 @@ class Search extends SearchDelegate {
   //       enabledBorder: InputBorder.none,
   //       focusedBorder: InputBorder.none,
   //     );
-  //? chang color text write in search Article
+  //? change color text write in search Article
   @override
-  // TODO: implement searchFieldStyle
   TextStyle? get searchFieldStyle =>
       TextStyle(color: Colors.white, fontSize: 20);
   //? chang text Search to Search Article
   @override
-  // TODO: implement searchFieldLabel
   String? get searchFieldLabel => 'Search Article';
-  //? control style appbar theme
+  //? control style app bar theme
   @override
   ThemeData appBarTheme(BuildContext context) {
     return ThemeData(
@@ -70,7 +68,7 @@ class Search extends SearchDelegate {
         onPressed: () {
           showResults(context);
         },
-        icon: Icon(
+        icon: const Icon(
           Icons.search,
           color: Colors.white,
           size: 35,
@@ -86,7 +84,7 @@ class Search extends SearchDelegate {
       onPressed: () {
         query = '';
       },
-      icon: Icon(
+      icon: const Icon(
         Icons.clear,
         size: 35,
         color: Colors.white,
@@ -102,7 +100,7 @@ class Search extends SearchDelegate {
       future: ApiProject.getSearch(query),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return Center(
+          return const Center(
             child: CircularProgressIndicator(
               color: MyTheme.defulteColor,
             ),

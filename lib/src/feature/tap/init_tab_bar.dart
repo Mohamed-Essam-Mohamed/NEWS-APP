@@ -1,18 +1,18 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:app_news/src/animation/loading_animation_page.dart';
-import 'package:app_news/src/animation/loading_animation_tab.dart';
+
 import 'package:app_news/src/api/api_project.dart';
 import 'package:app_news/src/feature/tap/widget/tab_container.dart';
 import 'package:app_news/src/model/category_model.dart';
 import 'package:app_news/src/model/sources_respons_model.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/foundation.dart';
+
 import 'package:flutter/material.dart';
 
 class InitTabBar extends StatefulWidget {
-  CategoryModel categoryModel;
-  InitTabBar({required this.categoryModel, super.key});
+  final CategoryModel categoryModel;
+  const InitTabBar({required this.categoryModel, super.key});
 
   @override
   State<InitTabBar> createState() => _InitTabBarState();
@@ -45,8 +45,8 @@ class _InitTabBarState extends State<InitTabBar> {
             ),
           );
         }
-        var sourcceList = snapshot.data?.sources ?? [];
-        return TabContainer(sourcceList: sourcceList);
+        var sourceList = snapshot.data?.sources ?? [];
+        return TabContainer(sourceList: sourceList);
       },
     );
   }

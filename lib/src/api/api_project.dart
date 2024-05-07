@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:app_news/src/model/news_respons_model.dart';
-import 'package:app_news/src/model/sources_respons_model.dart';
+import '../model/news_respons_model.dart';
+import '../model/sources_respons_model.dart';
 import 'package:http/http.dart' as http;
 
 class ApiProject {

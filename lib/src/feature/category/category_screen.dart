@@ -1,4 +1,4 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
+// ignore_for_file: public_member_api_docs, sort_constructors_first, unused_local_variable
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -8,7 +8,7 @@ import 'package:app_news/src/model/category_model.dart';
 
 class CategoryScreen extends StatelessWidget {
   static const String routeName = "CategoryScreen";
-  Function onClickCategory;
+  final Function onClickCategory;
   CategoryScreen({
     Key? key,
     required this.onClickCategory,
@@ -26,15 +26,17 @@ class CategoryScreen extends StatelessWidget {
           margin: EdgeInsets.all(MediaQuery.of(context).size.height * 0.02),
           child: Text(
             "Pick your category\nof interest",
-            style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                  color: Colors.grey[500],
-                ),
+            style: TextStyle(
+              fontSize: 25,
+              fontWeight: FontWeight.w500,
+              color: Colors.grey[500],
+            ),
             textAlign: TextAlign.start,
           ),
         ),
         Expanded(
           child: GridView.builder(
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
             ),
             itemBuilder: (context, index) => InkWell(

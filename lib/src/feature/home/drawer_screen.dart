@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 class DrawerHome extends StatelessWidget {
   static const int onClickCategory = 1;
   static const int onClickSetting = 2;
-  Function onClickDrawer;
-  DrawerHome({required this.onClickDrawer});
+  final Function onClickDrawer;
+  const DrawerHome({required this.onClickDrawer});
 
   @override
   Widget build(BuildContext context) {

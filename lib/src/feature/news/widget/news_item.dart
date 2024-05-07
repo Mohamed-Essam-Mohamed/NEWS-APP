@@ -7,7 +7,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class NewsItem extends StatelessWidget {
-  Articles news;
+  final Articles news;
   NewsItem({required this.news});
 
   @override

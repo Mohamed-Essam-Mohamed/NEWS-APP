@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
+// ignore: must_be_immutable
 class ViewFullArticle extends StatefulWidget {
   String url;
   ViewFullArticle({required this.url});
@@ -36,7 +37,7 @@ class _ViewFullArticleState extends State<ViewFullArticle> {
   }
 
   void changeTimer() {
-    Timer(Duration(milliseconds: 1300), () {
+    Timer(const Duration(milliseconds: 1300), () {
       timer = true;
       setState(() {});
     });

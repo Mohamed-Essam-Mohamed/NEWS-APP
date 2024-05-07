@@ -1,11 +1,11 @@
-import 'package:app_news/src/feature/category/category_screen.dart';
-import 'package:app_news/src/feature/home/search.dart';
+import '../category/category_screen.dart';
+import 'search.dart';
 
-import 'package:app_news/src/feature/settings_tap/settings_tap.dart';
-import 'package:app_news/src/feature/tap/init_tab_bar.dart';
+import '../settings_tap/settings_tap.dart';
+import '../tap/init_tab_bar.dart';
 
-import 'package:app_news/src/feature/home/drawer_screen.dart';
-import 'package:app_news/src/model/category_model.dart';
+import 'drawer_screen.dart';
+import '../../model/category_model.dart';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +13,7 @@ import 'package:flutter/widgets.dart';
 
 class HomeScreen extends StatefulWidget {
   static const routeName = "HomeScreen";
-  HomeScreen({super.key});
+  const HomeScreen({super.key});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -33,8 +33,8 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         Scaffold(
           drawer: Drawer(
-            child: DrawerHome(onClickDrawer: onCategoryClickDrawer),
             shadowColor: Colors.white,
+            child: DrawerHome(onClickDrawer: onCategoryClickDrawer),
           ),
           appBar: AppBar(
             actions: [
@@ -60,7 +60,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           body: selectedDrawerItem == DrawerHome.onClickSetting
-              ? SettingsTap()
+              ? const SettingsTap()
               : selectedCategory == null
                   ? CategoryScreen(onClickCategory: onClickCategory)
                   : InitTabBar(categoryModel: selectedCategory!),
@@ -70,8 +70,8 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   CategoryModel? selectedCategory;
-  void onClickCategory(CategoryModel newselectedCategory) {
-    selectedCategory = newselectedCategory;
+  void onClickCategory(CategoryModel newSelectedCategory) {
+    selectedCategory = newSelectedCategory;
     setState(() {});
   }
 

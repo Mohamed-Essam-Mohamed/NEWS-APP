@@ -1,14 +1,14 @@
-import 'package:app_news/src/feature/news/init_news.dart';
-import 'package:app_news/src/feature/tap/widget/tab_item.dart';
-import 'package:app_news/src/model/sources_respons_model.dart';
-import 'package:app_news/src/theme/my_theme.dart';
+import '../../news/init_news.dart';
+import 'tab_item.dart';
+import '../../../model/sources_respons_model.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class TabContainer extends StatefulWidget {
-  List<Source> sourcceList;
+  final List<Source> sourceList;
 
-  TabContainer({required this.sourcceList, super.key});
+  const TabContainer({required this.sourceList, super.key});
 
   @override
   State<TabContainer> createState() => _TabContainerState();
@@ -20,7 +20,7 @@ class _TabContainerState extends State<TabContainer> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: widget.sourcceList.length,
+      length: widget.sourceList.length,
       child: Column(
         children: [
           TabBar(
@@ -30,12 +30,12 @@ class _TabContainerState extends State<TabContainer> {
               selectedIndex = index;
               setState(() {});
             },
-            tabs: widget.sourcceList
+            tabs: widget.sourceList
                 .map(
                   (source) => TabItem(
                     source: source,
                     isSelected:
-                        selectedIndex == widget.sourcceList.indexOf(source),
+                        selectedIndex == widget.sourceList.indexOf(source),
                   ),
                 )
                 .toList(),
@@ -43,7 +43,7 @@ class _TabContainerState extends State<TabContainer> {
           SizedBox(
             height: 20,
           ),
-          Expanded(child: InitNews(source: widget.sourcceList[selectedIndex])),
+          Expanded(child: InitNews(source: widget.sourceList[selectedIndex])),
         ],
       ),
     );

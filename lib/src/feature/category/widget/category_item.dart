@@ -2,12 +2,11 @@
 
 import 'package:app_news/src/model/category_model.dart';
 import 'package:app_news/src/theme/my_theme.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class CategoryItem extends StatelessWidget {
-  CategoryModel categoryModel;
-  int index;
+  final CategoryModel categoryModel;
+  final int index;
 
   CategoryItem({
     required this.categoryModel,
@@ -44,6 +43,9 @@ class CategoryItem extends StatelessWidget {
           ),
           Text(
             categoryModel.title,
+            textAlign: TextAlign.center,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
             style: Theme.of(context).textTheme.titleMedium,
           )
         ],

@@ -1,4 +1,4 @@
-import 'package:app_news/src/theme/my_theme.dart';
+import '../theme/my_theme.dart';
 import 'package:flutter/material.dart';
 
 class CategoryModel {
