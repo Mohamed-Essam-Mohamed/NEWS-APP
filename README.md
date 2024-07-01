@@ -30,6 +30,7 @@ using different endpoints and he can view the website of the article, the app al
 
 
 ## 📱 UI
+![ui_news_app](https://github.com/Mohamed-Essam-Mohamed/NEWS-APP/assets/152906492/19d1cde3-ded6-429d-ac94-07f6393cb3c8)
 
 
 
