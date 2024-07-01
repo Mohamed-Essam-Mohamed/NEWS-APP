@@ -1,8 +1,6 @@
 # 🌐 News App 
 
 
-
-
 ## 🚀 Getting Started
 
 - The application is fully API-dependent.
